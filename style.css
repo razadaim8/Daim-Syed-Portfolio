@@ -3,6 +3,162 @@
     Senior UI/UX & Graphic Designer
 */
 
+/* Base Styles */
+:root {
+    --navbar-bg: #ffffff; /* Fallback */
+    --btn-bg: #ffffff;
+    --btn-text: #000000;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Navbar Container */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    width: 1200px;
+    max-width: 95%;
+    height: 80px;
+    background: var(--primary-gradient);
+    border-radius: 50px; /* Highly rounded corners as per design */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    border: 1px solid #2563eb;
+    box-shadow: 0 2px 10px hsl(221, 83%, 53%, 0.5);
+}
+
+/* Logo */
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-white);
+    text-decoration: none;
+}
+
+.logo span {
+    color: #000; /* Matching the dot in the logo if needed, or keep as is */
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+}
+
+.nav-links li a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 0.9;
+    transition: var(--transition);
+}
+
+.nav-links li a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* Navbar Actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Theme Toggle */
+.theme-toggle-checkbox {
+    display: none;
+}
+
+.theme-toggle-label {
+    cursor: pointer;
+    color: var(--text-white);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.theme-toggle-label .fa-sun {
+    display: none;
+}
+
+.theme-toggle-checkbox:checked + .navbar .fa-moon {
+    display: none;
+}
+
+.theme-toggle-checkbox:checked + .navbar .fa-sun {
+    display: inline-block;
+}
+
+/* Button Styles */
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 16px;
+}
+
+.nav-cta {
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+}
+
+.nav-cta:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 20px;
+    }
+    .navbar .container {
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simple mobile hide for now, as per standard responsive behavior */
+    }
+    .navbar .container {
+        height: 70px;
+    }
+    .nav-cta {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
 :root {
     /* Light Mode Colors */
     --primary-color: #2563eb;
@@ -16,7 +172,7 @@
     --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
     --gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
     --glass-bg: rgba(255, 255, 255, 0.8);
-    
+
     /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
@@ -24,6 +180,9 @@
     --container-width: 1200px;
 }
 
+.daimimg {
+    z-index: 10;
+}
 
 /* Dark Mode Variables */
 body:has(#theme-toggle:checked) {
