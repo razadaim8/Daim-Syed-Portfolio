@@ -180,10 +180,6 @@ body {
     --container-width: 1200px;
 }
 
-.daimimg {
-    z-index: 10;
-}
-
 /* Dark Mode Variables */
 body:has(#theme-toggle:checked) {
     --bg-color: #0f172a;
@@ -238,6 +234,7 @@ img {
 
 .container {
     max-width: var(--container-width);
+    width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -403,9 +400,9 @@ img {
 
 .hero .container {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.2fr 1fr;
     align-items: center;
-    gap: 4rem;
+    gap:2rem;
 }
 
 .badge {
@@ -447,7 +444,7 @@ img {
 
 .hero-visual {
     position: relative;
-    height: 400px;
+    height: 500px;
 }
 
 .visual-blob {
@@ -481,9 +478,13 @@ img {
     border: 1px solid var(--border-color);
     animation: float 6s ease-in-out infinite;
 }
+.daimimg { 
+    width: 536px;
+    height: auto;
+}   
 
-.card-1 { top: 10%; left: 10%; }
-.card-2 { bottom: 10%; right: 10%; animation-delay: 3s; }
+.card-1 { top: 30%; left: 00%; }
+.card-2 { bottom: 10%; right: 3%; animation-delay: 3s; }
 
 .visual-card i {
     font-size: 1.5rem;
